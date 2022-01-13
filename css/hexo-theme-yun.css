@@ -2053,6 +2053,10 @@ input {
 #search .icon {
   color: #0078e7;
 }
+#waline {
+  --waline-theme-color: #0078e7;
+  --waline-active-color: rgba(0,120,231,0.8);
+}
 #comment {
   margin: 0 1rem;
   padding: 1rem;
