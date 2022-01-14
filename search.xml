@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/01/14/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/"/>
+      <url>/2022/01/14/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>title: 建立博客小结<br>categories: 学<br>tags: 技术知识☢</p><p>#<em><strong>博客创建过程:</strong></em><br>实现过程比较简单,有手就行.<del>也就尝试了n遍😅</del></p><blockquote><p>个人博客搭建<br>1.下载nodejs<br>2.注册github账号,创建名称为:username.github.io的仓库<br>3.下载git for windows<br>4.gitssh配置:双击gitbash<br>  输入命令:ssh-keygen -t rsa -C “<a href="mailto:&#x75;&#115;&#101;&#114;&#x6e;&#97;&#x6d;&#x65;&#64;&#x71;&#113;&#x2e;&#x63;&#x6f;&#109;">&#x75;&#115;&#101;&#114;&#x6e;&#97;&#x6d;&#x65;&#64;&#x71;&#113;&#x2e;&#x63;&#x6f;&#109;</a>“<br>  打开ssh设置添加</p></blockquote><blockquote><p>5.hexo使用<br> npm install hexo-cli -g<br> hexo init hjmblog<br> cd hjmblog<br> npm install hexo s预览</p></blockquote><blockquote><p>6.发布到博客<br>1.配置config中的deploy<br> 2.type : git<br> 3.repo: ……<br> 4.url : ……<br> 5.hexo-deployer-git –save<br> 6.修改branch: master<br> 7.git config –global user.email “<a href="mailto:&#x75;&#x73;&#101;&#114;&#110;&#x61;&#109;&#x65;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;">&#x75;&#x73;&#101;&#114;&#110;&#x61;&#109;&#x65;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;</a>“<br>  git config –global user.name “username”<br> 8.hexo g<br> hexo d</p></blockquote><p>到这里你就成功了,怎么样是不是很简单,现在就去试试吧.<br><del>此处省略万字吐槽😅</del></p><p>补充几个更新github仓库的指令：</p><blockquote><p>git status 查看状态</p><p>git add . 添加文件</p><p>git commit -m “xxx” 编辑提交信息</p><p>git push 提交文件</p></blockquote><p>后记：</p><p>其实很早之前就开始弄博客了当时也写了一部分文章，因为github的延迟我也在gitee上面整过，效果总是不太满意，这次腾出时间从头到尾梳理了一遍到目前为止还算满意。主题选用了好多，最终选用了yun这款主题，作者真是一个非常可爱的大佬啊哈哈哈（下面有主题题链接）。丢失的文章就不再移到新blog里面了 <del>才不是因为没有什么技术干活🤣</del> 就从2022/1/14开始吧，一周能发一篇文章就很不错了 <del>dog</del> 。</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/202110232226418.jpeg" loading="lazy"></p><p>新图（测试用例）：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.14.jpg" loading="lazy"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/01/12/hello-world/"/>
       <url>/2022/01/12/hello-world/</url>
@@ -11,6 +24,18 @@
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> Hello World </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hello World </tag>
+            
+        </tags>
       
     </entry>
     
