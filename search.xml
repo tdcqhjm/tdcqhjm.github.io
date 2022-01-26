@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>手残党玩空洞骑士</title>
+      <link href="/2022/01/26/kongdong/"/>
+      <url>/2022/01/26/kongdong/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p> 早就听说空洞骑士是一部神作，放假期间难得抽出时间进行一番体验。</p><h3 id="点评"><a href="#点评" class="headerlink" title="点评"></a>点评</h3><blockquote><p>动画方面：我很喜欢这种类似于Q版的画风，小骑士看起来呆头呆脑的。而且不同地图还有不同的风格，水晶山峰上的大冲，蓝湖属实壮观（下面附图）。丰富的剧情和BGM值得好评。</p></blockquote><blockquote><p>难度方面：名不虚传，对于我这种手残党极不友好，印象深刻的是三螳螂，送花任务，白宫跳跳乐，以及各种BOSS。三螳螂使我对游戏中的战斗机制有了更清晰的认识。白宫跳跳乐过后跑图各种地形如履平地，送花真是磨练一个人的心性啊，最后场景前面的荆棘着实考验一个人的自信，要按着方向键冲到荆棘脸上看准时机起跳，或早或晚或者松开方向键都会失败，失败了就从头再来！！！BOSS就更…</p></blockquote><blockquote><p>剧情方面：刚开始玩的时候没有想到，在有地图的情况下我还会迷路。打开地图看着地图上面的小人标记，一脸懵B怀疑地图有问题<del>（后面习惯了就还好）</del> 。为了解决迷路问题我看了好多攻略，剧情基本完整体验了一遍。再结合B站上面的解说，这游戏的背景属实震撼到我了（<em>游戏故事讲述一位小骑士所进行的冒险，前往探查一座荒废多时的昆虫王国圣巢（Hallownest）。在旅途中探索未知地区、击败敌人、收集物品&amp;护符、认识各式各样的虫，并解开这座王国隐藏的历史与秘密，并在过程中了解自身的使命，最后成为空洞骑士。——维基百科</em> ）</p></blockquote><blockquote><p>吐槽：想我这种手残党根本打不过厉害的boss，愚人竞技场三，辐光，梦魇格林在这些上面不知道被虐了多少次。无奈人菜瘾又大，想看看最终结局。就去找了一个mod装上全护符，骨钉伤害加了好多，最后靠”开挂”打过去了😅算是不留遗憾。总之想玩这种硬核打boss的我强烈推荐尝试一下。</p></blockquote><h3 id="附图"><a href="#附图" class="headerlink" title="附图"></a>附图</h3><p>装了皮肤mod的小骑士：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.26.1.jpg" loading="lazy"></p><p>蓝湖：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.26.2.jpg" loading="lazy"></p><p>决战辐光：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.26.3.jpg" loading="lazy"></p><p>第一次只打前辈通关：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.26.4.jpg" loading="lazy"></p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.26.5.jpg" loading="lazy"></p><p>后面通关完还有各种挑战，看大佬们打四锁五门属实令人震惊，背后估计要有上百次的练习才能达到。果然是三百六十行，行行出状元。</p><p>点评就到此结束，神作就是神作，非常nice。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 玩 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 人菜瘾又大 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>建立博客小结</title>
       <link href="/2022/01/14/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/"/>
       <url>/2022/01/14/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#<em><strong>博客创建过程:</strong></em><br>实现过程比较简单,有手就行.<del>也就尝试了n遍😅</del></p><blockquote><p>个人博客搭建<br>1.下载nodejs<br>2.注册github账号,创建名称为:username.github.io的仓库<br>3.下载git for windows<br>4.gitssh配置:双击gitbash<br>  输入命令:ssh-keygen -t rsa -C “<a href="mailto:&#117;&#115;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;">&#117;&#115;&#101;&#x72;&#x6e;&#97;&#109;&#101;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;</a>“<br>  打开ssh设置添加</p></blockquote><blockquote><p>5.hexo使用<br> npm install hexo-cli -g<br> hexo init hjmblog<br> cd hjmblog<br> npm install hexo s预览</p></blockquote><blockquote><p>6.发布到博客<br>1.配置config中的deploy<br> 2.type : git<br> 3.repo: ……<br> 4.url : ……<br> 5.hexo-deployer-git –save<br> 6.修改branch: master<br> 7.git config –global user.email “<a href="mailto:&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;">&#x75;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#x65;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a>“<br>  git config –global user.name “username”<br> 8.hexo g<br> hexo d</p></blockquote><p>到这里你就成功了,怎么样是不是很简单,现在就去试试吧.<br><del>此处省略万字吐槽😅</del></p><p>补充几个更新github仓库的指令：</p><blockquote><p>git status 查看状态</p><p>git add . 添加文件</p><p>git commit -m “xxx” 编辑提交信息</p><p>git push 提交文件</p></blockquote><p>后记：</p><p>其实很早之前就开始弄博客了当时也写了一部分文章，因为github的延迟我也在gitee上面整过，效果总是不太满意，这次腾出时间从头到尾梳理了一遍到目前为止还算满意。主题选用了好多，最终选用了yun这款主题，作者真是一个非常可爱的大佬啊哈哈哈（下面有主题题链接）。丢失的文章就不再移到新blog里面了 <del>才不是因为没有什么技术干货🤣</del> 就从2022/1/14开始吧，一周能发一篇文章就很不错了 <del>dog</del> 。</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/202110232226418.jpeg" loading="lazy"></p><p>新图（测试图床上传）：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.14.jpg" loading="lazy"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#<em><strong>博客创建过程:</strong></em><br>实现过程比较简单,有手就行.<del>也就尝试了n遍😅</del></p><blockquote><p>个人博客搭建<br>1.下载nodejs<br>2.注册github账号,创建名称为:username.github.io的仓库<br>3.下载git for windows<br>4.gitssh配置:双击gitbash<br>  输入命令:ssh-keygen -t rsa -C “<a href="mailto:&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#117;&#115;&#101;&#114;&#x6e;&#x61;&#x6d;&#101;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a>“<br>  打开ssh设置添加</p></blockquote><blockquote><p>5.hexo使用<br> npm install hexo-cli -g<br> hexo init hjmblog<br> cd hjmblog<br> npm install hexo s预览</p></blockquote><blockquote><p>6.发布到博客<br>1.配置config中的deploy<br> 2.type : git<br> 3.repo: ……<br> 4.url : ……<br> 5.hexo-deployer-git –save<br> 6.修改branch: master<br> 7.git config –global user.email “<a href="mailto:&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#x6d;">&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#x6d;</a>“<br>  git config –global user.name “username”<br> 8.hexo g<br> hexo d</p></blockquote><p>到这里你就成功了,怎么样是不是很简单,现在就去试试吧.<br><del>此处省略万字吐槽😅</del></p><p>补充几个更新github仓库的指令：</p><blockquote><p>git status 查看状态</p><p>git add . 添加文件</p><p>git commit -m “xxx” 编辑提交信息</p><p>git push 提交文件</p></blockquote><p>后记：</p><p>其实很早之前就开始弄博客了当时也写了一部分文章，因为github的延迟我也在gitee上面整过，效果总是不太满意，这次腾出时间从头到尾梳理了一遍到目前为止还算满意。主题选用了好多，最终选用了yun这款主题，作者真是一个非常可爱的大佬啊哈哈哈（下面有主题题链接）。丢失的文章就不再移到新blog里面了 <del>才不是因为没有什么技术干货🤣</del> 就从2022/1/14开始吧，一周能发一篇文章就很不错了 <del>dog</del> 。</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/202110232226418.jpeg" loading="lazy"></p><p>新图（测试图床上传）：</p><p><img src="https://gitee.com/tdcqhjm/cdn/raw/master/images/22.1.14.jpg" loading="lazy"></p>]]></content>
       
       
       <categories>
