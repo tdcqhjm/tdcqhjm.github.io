@@ -4,11 +4,61 @@
   
     
     <entry>
+      <title>windows 10系统下的ftp服务器搭建</title>
+      <link href="/2022/04/09/ftp%E6%90%AD%E5%BB%BA/"/>
+      <url>/2022/04/09/ftp%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近做的网络安全实验里面有一个有关ftp服务器的实验，感觉这个东西挺有意思的。特此写一篇文章大概总结一下搭建过程。</p><h3 id="实验环境准备"><a href="#实验环境准备" class="headerlink" title="实验环境准备"></a>实验环境准备</h3><p>一台装有Windows 10系统的电脑</p><h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="1-添加相应功能"><a href="#1-添加相应功能" class="headerlink" title="1.添加相应功能"></a>1.添加相应功能</h4><blockquote><p>首先按win+i键打开设置，在搜索框中输入控制面板，打开控制面板</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_1.1.png" loading="lazy"></p><blockquote><p>其次找到程序进行点击，进入程序设置后点击启用或关闭windows功能</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_1.2.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_1.3.png" loading="lazy"></p><blockquote><p>然后找到Internet Information Services一项，点击展开，按下图勾选相应功能后，点击确定等待安装</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_1.4.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_1.5.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_1.6.png" loading="lazy"></p><h4 id="2-对ftp服务器进行配置"><a href="#2-对ftp服务器进行配置" class="headerlink" title="2.对ftp服务器进行配置"></a>2.对ftp服务器进行配置</h4><blockquote><p>首先再左下角搜索框中输入IIS，在搜索结果中找到IIS管理器打开。展开左侧目录找到网站一项单击右键点击添加ftp站点。</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.1.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.7.png" loading="lazy"></p><blockquote><p>接着对ftp服务器进行配置，填写站点名称与物理路径（该路径就是此电脑上存放ftp文件的位置）后点击下一步。绑定IP地址和端口并勾选相应功能。（如何查看本机当前IP地址?—&gt;推荐同时按下ctrl+shift+esc打开任务管理器找到性能wifi一栏进行查看）</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.2.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.4.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.3.png" loading="lazy"></p><blockquote><p>最后对身份验证和授权信息进行设置完成配置（下面细说）。访问时一般采用win+e键打开文件资源管理器在上面一栏中输入**ftp://…(绑定的ip地址)/**即可进行访问</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.5.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_2.6.png" loading="lazy"></p><h4 id="3-ftp的身份验证与授权规则"><a href="#3-ftp的身份验证与授权规则" class="headerlink" title="3.ftp的身份验证与授权规则"></a>3.ftp的身份验证与授权规则</h4><h5 id="身份验证包括基本身份验证和匿名身份验证"><a href="#身份验证包括基本身份验证和匿名身份验证" class="headerlink" title="身份验证包括基本身份验证和匿名身份验证"></a>身份验证包括基本身份验证和匿名身份验证</h5><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_3.1.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_3.2.png" loading="lazy"></p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_3.3.png" loading="lazy"></p><h6 id="身份验证"><a href="#身份验证" class="headerlink" title="身份验证"></a>身份验证</h6><p>只禁用匿名身份验证，登陆ftp服务器时时就会让你填写账号密码（此处为windows的账号和密码,win10 家庭版不建议禁用，由于缺少用户和组管理功能禁用后可能无法登录）</p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/setupftp_3.5.png" loading="lazy"></p><p>只禁用基本身份验证，直接就可以登录进去。</p><h6 id="授权规则"><a href="#授权规则" class="headerlink" title="授权规则"></a>授权规则</h6><p> 当只是想特定的人登录就需要更改授权规，我们最开始就是直接勾选的所有用户，现在我们想特定的人才可以登录，就需要删除原来的允许规则并添加一个新的规则。</p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>win10家庭版缺少部分功能，在进行登陆和用户权限设置时部分功能会无法使用。此处仅是一个简单的ftp服务器配置，完成后同一个局域网下都可以对ftp服务器中的内容进行访问（常用于虚拟机与主机之间）。若想进一步研究ftp服务器相关功能可以去网上搜索，对吧，上面有很多详细教程🤣。好了，不想写了，就先这样了，这些小东西整了快仨小时😑。。。后面看情况，有必要的话再添加内容。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ftp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>汇编知识点小结</title>
+      <link href="/2022/04/06/%E6%B1%87%E7%BC%96%E7%9F%A5%E8%AF%86/"/>
+      <url>/2022/04/06/%E6%B1%87%E7%BC%96%E7%9F%A5%E8%AF%86/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一-通用寄存器-amp-8位寄存器-amp-16位寄存器-amp-FLAG标志寄存器："><a href="#一-通用寄存器-amp-8位寄存器-amp-16位寄存器-amp-FLAG标志寄存器：" class="headerlink" title="一.通用寄存器&amp;8位寄存器&amp;16位寄存器&amp;FLAG标志寄存器："></a>一.通用寄存器&amp;8位寄存器&amp;16位寄存器&amp;FLAG标志寄存器：</h3><blockquote><p>通用寄存器</p></blockquote><ul><li>AX:AH;AL</li><li>BX:BH;BL</li><li>CX:CH;CL</li><li>DX:DH;HL</li></ul><blockquote><p>8位寄存器</p></blockquote><p>AX：累加器</p><p>BX：基地址寄存器</p><p>CX：计数器</p><p>DX：数据寄存器</p><blockquote><p>16位寄存器</p></blockquote><p>SP:堆栈指针寄存器</p><p>BP:基地址寄存器</p><p>SI:源变址寄存器</p><p>DI:目的变址寄存器</p><p>IP:指令指针寄存器</p><p>FLAG：状态标志寄存器</p><p>CS</p><p>DS:</p><p>SS:</p><p>ES:</p><blockquote><p>FLAG标志寄存器</p></blockquote><p><strong>进位标志CF</strong>:当结果的最高位产生一个进位或借位，则CF=1，否则*CF=0；</p><p><strong>溢出标志OF</strong>：在算术运算中，带符号数的运算结果超出8位或16位带符号数能表达的范围，则OF=1，否则OF=0；</p><p><strong>符号标志SF</strong>：结果的最高位（D15或D7）为1，则SF=1；否则SF=0；</p><p><strong>零标志ZF</strong>：若运算结果为0；则为1，否则0；</p><p><strong>奇偶标志PF</strong>：结果里的1为偶数则为1，否则为0</p><p><strong>辅助进位标志AF</strong>：在字节操作时，由低半字节向高半字节，字操作时低字节向高字节进位或借位，则为1，否则0；</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 汇编 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>考研复习之高数</title>
       <link href="/2022/04/04/2022_4_4_%E9%AB%98%E6%95%B0%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
       <url>/2022/04/04/2022_4_4_%E9%AB%98%E6%95%B0%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="高数复习"><a href="#高数复习" class="headerlink" title="高数复习"></a>高数复习</h3><blockquote><p>第一讲：高等数学预备知识：</p></blockquote><p><img src="https://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/%E7%AC%AC%E4%B8%80%E8%AE%B2%20%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.png" alt="第一讲 高等数学预备知识" loading="lazy"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="高数复习"><a href="#高数复习" class="headerlink" title="高数复习"></a>高数复习</h3><blockquote><p>第一讲：高等数学预备知识：</p></blockquote><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/%E7%AC%AC%E4%B8%80%E8%AE%B2%20%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.png" alt="第一讲 高等数学预备知识" loading="lazy"></p><blockquote><p>第二讲：数列极限：</p></blockquote>]]></content>
       
       
       <categories>
@@ -83,7 +133,7 @@
       <link href="/2022/01/14/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/"/>
       <url>/2022/01/14/%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%BB%93/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#<em><strong>博客创建过程:</strong></em><br>实现过程比较简单,有手就行.<del>也就尝试了n遍😅</del></p><blockquote><p>个人博客搭建<br>1.下载nodejs<br>2.注册github账号,创建名称为:username.github.io的仓库<br>3.下载git for windows<br>4.gitssh配置:双击gitbash<br>  输入命令:ssh-keygen -t rsa -C “<a href="mailto:&#117;&#x73;&#x65;&#x72;&#110;&#97;&#x6d;&#x65;&#x40;&#x71;&#113;&#46;&#x63;&#x6f;&#109;">&#117;&#x73;&#x65;&#x72;&#110;&#97;&#x6d;&#x65;&#x40;&#x71;&#113;&#46;&#x63;&#x6f;&#109;</a>“<br>  打开ssh设置添加</p></blockquote><blockquote><p>5.hexo使用<br> npm install hexo-cli -g<br> hexo init hjmblog<br> cd hjmblog<br> npm install hexo s预览</p></blockquote><blockquote><p>6.发布到博客<br>1.配置config中的deploy<br> 2.type : git<br> 3.repo: ……<br> 4.url : ……<br> 5.hexo-deployer-git –save<br> 6.修改branch: master<br> 7.git config –global user.email “<a href="mailto:&#x75;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#101;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#109;">&#x75;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#101;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#109;</a>“<br>  git config –global user.name “username”<br> 8.hexo g<br> hexo d</p></blockquote><p>到这里你就成功了,怎么样是不是很简单,现在就去试试吧.<br><del>此处省略万字吐槽😅</del></p><p>补充几个更新github仓库的指令：</p><blockquote><p>git status 查看状态</p><p>git add . 添加文件</p><p>git commit -m “xxx” 编辑提交信息</p><p>git push 提交文件</p></blockquote><p>后记：</p><p>其实很早之前就开始弄博客了当时也写了一部分文章，因为github的延迟我也在gitee上面整过，效果总是不太满意，这次腾出时间从头到尾梳理了一遍到目前为止还算满意。主题选用了好多，最终选用了yun这款主题，作者真是一个非常可爱的大佬啊哈哈哈（下面有主题题链接）。丢失的文章就不再移到新blog里面了 <del>才不是因为没有什么技术干货🤣</del> 就从2022/1/14开始吧，一周能发一篇文章就很不错了 <del>dog</del> 。</p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/202110232226418.jpeg" loading="lazy"></p><p>新图（测试图床上传）：</p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/22.1.14.jpg" loading="lazy"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>#<em><strong>博客创建过程:</strong></em><br>实现过程比较简单,有手就行.<del>也就尝试了n遍😅</del></p><blockquote><p>个人博客搭建<br>1.下载nodejs<br>2.注册github账号,创建名称为:username.github.io的仓库<br>3.下载git for windows<br>4.gitssh配置:双击gitbash<br>  输入命令:ssh-keygen -t rsa -C “<a href="mailto:&#117;&#x73;&#x65;&#x72;&#x6e;&#97;&#x6d;&#x65;&#64;&#113;&#x71;&#46;&#x63;&#111;&#109;">&#117;&#x73;&#x65;&#x72;&#x6e;&#97;&#x6d;&#x65;&#64;&#113;&#x71;&#46;&#x63;&#111;&#109;</a>“<br>  打开ssh设置添加</p></blockquote><blockquote><p>5.hexo使用<br> npm install hexo-cli -g<br> hexo init hjmblog<br> cd hjmblog<br> npm install hexo s预览</p></blockquote><blockquote><p>6.发布到博客<br>1.配置config中的deploy<br> 2.type : git<br> 3.repo: ……<br> 4.url : ……<br> 5.hexo-deployer-git –save<br> 6.修改branch: master<br> 7.git config –global user.email “<a href="mailto:&#x75;&#115;&#x65;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;">&#x75;&#115;&#x65;&#x72;&#x6e;&#97;&#x6d;&#101;&#64;&#x71;&#x71;&#46;&#99;&#111;&#x6d;</a>“<br>  git config –global user.name “username”<br> 8.hexo g<br> hexo d</p></blockquote><p>到这里你就成功了,怎么样是不是很简单,现在就去试试吧.<br><del>此处省略万字吐槽😅</del></p><p>补充几个更新github仓库的指令：</p><blockquote><p>git status 查看状态</p><p>git add . 添加文件</p><p>git commit -m “xxx” 编辑提交信息</p><p>git push 提交文件</p></blockquote><p>后记：</p><p>其实很早之前就开始弄博客了当时也写了一部分文章，因为github的延迟我也在gitee上面整过，效果总是不太满意，这次腾出时间从头到尾梳理了一遍到目前为止还算满意。主题选用了好多，最终选用了yun这款主题，作者真是一个非常可爱的大佬啊哈哈哈（下面有主题题链接）。丢失的文章就不再移到新blog里面了 <del>才不是因为没有什么技术干货🤣</del> 就从2022/1/14开始吧，一周能发一篇文章就很不错了 <del>dog</del> 。</p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/202110232226418.jpeg" loading="lazy"></p><p>新图（测试图床上传）：</p><p><img src="http://raw.githubusercontent.com/tdcqhjm/blogimages/master/img/github/22.1.14.jpg" loading="lazy"></p>]]></content>
       
       
       <categories>
