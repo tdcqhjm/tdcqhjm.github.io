@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>netstat命令当中的内部地址和外部地址</title>
+      <link href="/2022/04/28/netstat%E5%91%BD%E4%BB%A4%E4%B8%AD%E7%9A%84%E5%A4%96%E9%83%A8%E5%9C%B0%E5%9D%80/"/>
+      <url>/2022/04/28/netstat%E5%91%BD%E4%BB%A4%E4%B8%AD%E7%9A%84%E5%A4%96%E9%83%A8%E5%9C%B0%E5%9D%80/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>网络连接是有2方参与，自己就是“内部地址”，别人就是“外部地址”，就这么简洁。</p><p>再举个例子，你用浏览器打开百度网站时，自己的 IP 地址就是内部地址了，也叫“本地地址”，百度服务器的IP就是外部地址，也就“远程地址”。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\黄剑明&gt;netstat -n</span><br><span class="line"></span><br><span class="line">活动连接</span><br><span class="line"></span><br><span class="line">  协议  本地地址          外部地址        状态</span><br><span class="line">  TCP    10.14.40.73:49863      112.80.145.223:443     ESTABLISHED</span><br><span class="line">  TCP    10.14.40.73:49865      157.148.36.32:80       ESTABLISHED</span><br><span class="line">  TCP    10.14.40.73:49866      220.194.118.203:8080   ESTABLISHED</span><br><span class="line">  TCP    10.14.40.73:49868      220.194.118.247:80     ESTABLISHED</span><br><span class="line">  TCP    10.14.40.73:50289      125.44.162.93:443      CLOSE_WAIT</span><br><span class="line">  TCP    10.14.40.73:50290      125.44.162.93:443      CLOSE_WAIT</span><br><span class="line">  TCP    10.14.40.73:50291      125.44.162.93:443      CLOSE_WAIT</span><br><span class="line">  TCP    10.14.40.73:50292      125.44.162.93:443      CLOSE_WAIT</span><br><span class="line">  TCP    10.14.40.73:50293      125.44.162.93:443      CLOSE_WAIT</span><br><span class="line">  TCP    10.14.40.73:50294      125.44.162.93:443      CLOSE_WAIT</span><br><span class="line">  TCP    10.14.40.73:51798      182.254.54.229:443     ESTABLISHED</span><br><span class="line">  TCP    10.14.40.73:52232      204.79.197.222:443     ESTABLISHED</span><br><span class="line">  TCP    10.14.40.73:52635      40.90.189.152:443      ESTABLISHED</span><br></pre></td></tr></table></figure><ul><li><blockquote><p>追问<br>那为什么有的时候两个地址的ip都是一样的呢（比如：127.0.0.1）?还有就是自己ipconfig所得到的ipv4地址和我在百度搜自己的ip是不一样的，这是什么原因？比如（自己ping:192.168.1.106，百度查的：121.204.218.202），这样我又该相信哪个才是真实的呢？</p></blockquote></li><li><p>追答<br>那个连接是自己连接到自己的，我们的程序是可以自己机器连接到自己的机器的，比如你开了代理服务器然后自己浏览器连接到代理服务器上，另一个例子就是 eclipse 启动一种程序来调试，JVM启动之后会开一个端口，然后 eclipse 会连接上去，这时候本地地址和外部地址都是你的机器的 IP 嘛。<br>关于看到的 IP 不同这件事很简单，因为你的 192.168 是内网地址，你的电脑没有直接连接到互联网，而是经过 ADSL 拨号的，那个 ADSL 得到的IP 地址又叫公网地址，它是直连互联网的，百度从互联网上只能看到你的公网地址，在网络术语中，你的路由器或 ADSL 被称为网关 (gateway)，这个字面上意思就是相当于古代的城门。<br>像百度自己是做生意的，它会申请公网地址，而且这个地址是固定的，在 ISP 运营商那里备案的。不像我们每天拨号上网。</p></li><li><blockquote><p>追问<br>弱弱的问下那要怎样才算是自己的电脑直接连上互联网？wifi？</p></blockquote></li><li><p>追答<br>我们个人用户电脑不会直连互联网，也不需要直连，通过路由器连上去就好了。<br>直连互联网要求去 ISP （比如电信联通）去申请，得到一个固定的 IP 地址，然后每年交年费使用它，这个费用不便宜，只有做生意的人才有必要去申请，比如你们公司申请宽带就是得到一个固定的公网地址。每个企业都有很多机器，每个机器都直连互联网是不切实际的，不仅费用高，而且 IP v4 的 地址早已不够用了，大家都需要用在内网中使用内网地址，通过网关连接到互联网，这不仅节省费用更是安全的原则，我们只需要在路由器（充当网关）上设置一次防火墙就可以了，如果每台机器都直连互联网，就需要每台机器都配置，这就复杂了。<br>我们拨号上网也能直连互联网，但不能使用像路由器这些设备，必须电脑直接拨号，ADSL出来的线接网卡上。<br>基本上就没有必要直连互联网，都要通过网关才安全。哪怕是百度的服务器也不是直连互联网，而是前面有几个”负载均衡“的前置机，这时前置机直连互联网，来平均分配流量，免得大家都同时访问一台机器导致性能问题。总之我们向互联网开放的接口就叫公网地址，也就是那个直接连接着 ISP（电信或联通之类的）送来的网线的那个网卡的地址。<br>我们用 ADSL 拨号直接把那根线接网卡上，不用路由器，并且网卡 IP 设定为”自动分配 IP地址“它就能得到来自 ISP 的公网地址。<br>现在有些 ADSL 本身自带简易内置的傻瓜式路由器的，所以那样就始终是 ADSL自带的路由器 当网关。<br>这里你自己电脑本身网络还是直接能连接到互联网的，只是说你的 PC 经过网关或代理连接到互联网，这并不影响你上网，这对个人用户来说是好事，否则互联网上的可以简单地打开你的电脑上的共享文件夹，啥东西都被人家看到了。</p></li><li><p>原地址：<a href="https://zhidao.baidu.com/question/489211251781025452.html">https://zhidao.baidu.com/question/489211251781025452.html</a></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>逆向工程之程序脱壳</title>
       <link href="/2022/04/13/%E7%A8%8B%E5%BA%8F%E8%84%B1%E5%A3%B3/"/>
       <url>/2022/04/13/%E7%A8%8B%E5%BA%8F%E8%84%B1%E5%A3%B3/</url>
